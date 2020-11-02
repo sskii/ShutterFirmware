@@ -73,7 +73,8 @@ void MenuLogic::open() {
 
 				if(stackEmpty()) {
 					// if we cannot go back any further
-					return;		// terminate the menuing process
+					kill = true;
+					break;		// terminate the menuing process
 				} else {
 					// restore a previous menu
 					menu = popStack();	// menu comes first
