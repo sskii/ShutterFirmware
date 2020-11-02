@@ -9,8 +9,8 @@ Designed to connect to a mechanical shutter with release and catch coils. GUI is
 ## Directory Structure
 This project uses the default structure created by PlatformIO. Briefly and most importantly;
 
-`src` contains all of the .cpp code files
-`include` contains all of the .h header files
+`src` contains all of the .cpp code files.
+`include` contains all of the .h header files.
 `lib` could contain any required libraries (although there should be a way to import directly from GitHub that would be preferred).
 
 Each directory is better described by the default `README` file contained within.
