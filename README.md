@@ -5,3 +5,5 @@ Written in C++ in VSCode with PlatformIO. I'd highly recommend this combination 
 
 ## Connectivity
 Designed to connect to a mechanical shutter with release and catch coils. GUI is displayed on a Nokia 8110 LCD.
+
+_more to come…_
