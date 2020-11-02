@@ -58,7 +58,7 @@ void MenuLogic::open() {
 					hover = 0;
 						// zero the hover for the new menu
 
-					change = true;	// note that we need to change menus.
+					change = true;	// make note that we need to change menus.
 
 				} else {
 					// menu item is selected
