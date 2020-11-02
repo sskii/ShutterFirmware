@@ -21,11 +21,13 @@
 void MenuLogic::open() {
 
 	// start us off in the right place
-	hover = 0;						// start on first item
-	menu = M_Main;					// start at main menu
+	hover = 0;			// start on first item
+	menu = M_Main;		// start at main menu
+
+	kill = false;		// avoid instant termination by resetting flag
 
 	// menu control loop
-	while(true) {
+	while(!kill) {
 		// while the menu is open
 
 		change = false;				// reset the change flag
@@ -34,6 +36,9 @@ void MenuLogic::open() {
 
 		// monitor the menu until it needs to exit
 		while(!change) {
+			
+			// housekeepingFunction() TODO
+			if(kill) break;			// check if we need to jump out.
 
 			// TODO check for scrolling
 			// TODO check for selections
