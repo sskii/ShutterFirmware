@@ -66,7 +66,7 @@ void MenuLogic::open() {
 				// the current 'exit' behaviour is to back up a menu
 				// we'll see if that prooves too annoying.
 
-				if(stackEmpty) {
+				if(stackEmpty()) {
 					// if we cannot go back any further
 					return;		// terminate the menuing process
 				} else {
