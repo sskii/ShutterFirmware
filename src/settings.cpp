@@ -49,6 +49,55 @@ uint8_t SettingsRegistry::change(int8_t delta) {
 	return (liveValue += delta);     // update and return the live value
 
 	// TODO remember that we're also responsible for, uh, bounds!!!
+	// TODO we actually want to give it as a string, don't we?
+
+}
+
+/* Determines the maximum value for the given menu item.
+ * @param itemNo The item UID.
+ * @returns The maximum bound for the item (inclusive).
+ */
+uint8_t SettingsRegistry::itemMaxVal(uint8_t itemNo) {
+
+	if(itemNo <= LAST_STEPPED_TIME) {
+		// setting is of type STEPPED TIME
+		// TODO return max value
+	} else if(itemNo <= LAST_ZONE_INTEGER) {
+		// setting is of type ZONE INTEGER
+		return 10;
+	} else {
+		// the last two don't require an upper bound.
+		return 0xff;
+	}
+
+}
+
+/* Get the raw value formatted as a string for display.
+ * @param UID The UID of the setting whose value is passed. (Needed to identify type.)
+ * @param renderVal The raw value to be rendered as a string.
+ * @returns The formatted string in English.
+ */
+String SettingsRegistry::settingAsString(uint8_t UID, uint8_t renderVal) {
+
+	// check for STEPPED TIME
+	if(UID <= LAST_STEPPED_TIME) {
+		// make a string from a STEPPED TIME value
+
+		/* STEPPED TIME:
+		 * value of 126 represents 2^-0.33, or .5 sec
+		 * value of 127 represents 2^0, or 1 sec
+		 * value of 128 represents 2^1, or 2 sec
+		 */
+
+		// TODO come back and redesign the origin such that the saved value of 0 represents the fastest shutter time. Long exp. times can then trail from there.
+
+		bool fraction = (renderVal < 127);	// flag if it's a fraction (less than one second).
+		if(fraction) renderVal = 127 - renderVal;	// take the "reciprocal." Well, it has that effect.
+		else renderVal -= 127;	// bring back a non-fraction back to normal
+
+		// TODO find a way to perform the operation for without exponentiation.
+
+	}
 
 }
 

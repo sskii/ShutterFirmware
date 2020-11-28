@@ -12,6 +12,8 @@
 #ifndef SETTINGS_H_
 #define SETTINGS_H_
 
+#include "menus.h"
+
 #include <Arduino.h>
 #include <EEPROM.h>     // yeah, we'll be lazy
                         // we can do it manually if we run short on memory.
@@ -23,6 +25,9 @@ public:
     uint8_t open(uint8_t UID);
     uint8_t change(int8_t delta);
     uint8_t close(bool commit);
+	uint8_t itemMaxVal(uint8_t itemNo);
+	uint8_t itemMinVal(uint8_t itemNo);
+    String settingAsString(uint8_t UID, uint8_t renderVal);
 
 private:
 
@@ -32,5 +37,11 @@ private:
     //uint8_t read(uint8_t UID);
 
 };
+
+/* the last of each setting type */
+#define LAST_STEPPED_TIME M_DlyT
+#define LAST_ZONE_INTEGER M_MetZone
+#define LAST_LENGTH M_FocusL
+#define LAST_DECIMAL M_RecipP
 
 #endif

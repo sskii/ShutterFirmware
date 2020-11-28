@@ -17,6 +17,7 @@ String menuGetTitle(uint8_t UID);
 // general defines
 #define STACK_HEIGHT 10
 
+
 /* define the UIDs of every menu item and menu */
 // menu items corresponding to settings, sorted by kind
 #define M_BaseExp 0			// base exposure
