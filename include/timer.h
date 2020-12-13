@@ -11,6 +11,7 @@
 #define TIMER_H_
 
 #include <Arduino.h>
+#include <math.h>
 
 // hard-code shutter speeds in third stops
 // we don't have the capacity to perform exponentiation
