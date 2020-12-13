@@ -24,10 +24,10 @@ void MenuLogic::open() {
 	hover = 0;			// start on first item
 	menu = M_Main;		// start at main menu
 
-	kill = false;		// avoid instant termination by resetting flag
+	close = false;		// reset flag to avoid instant termination
 
 	// menu control loop
-	while(!kill) {
+	while(!close) {
 		// while the menu is open
 
 		change = false;				// reset the change flag
@@ -38,7 +38,7 @@ void MenuLogic::open() {
 		while(!change) {
 			
 			// housekeepingFunction() TODO
-			if(kill) break;			// check if we need to jump out.
+			if(close) break;			// check if we need to jump out.
 
 			// TODO check for scrolling
 			// TODO check for selections
@@ -73,7 +73,7 @@ void MenuLogic::open() {
 
 				if(stackEmpty()) {
 					// if we cannot go back any further
-					kill = true;
+					close = true;
 					break;		// terminate the menuing process
 				} else {
 					// restore a previous menu
@@ -90,7 +90,7 @@ void MenuLogic::open() {
  * @returns The top data
  */
 uint8_t MenuLogic::popStack() {
-	if(stackEmpty()) return M_Default;	// this is undefined behaviour. [Debugging note]
+	if(stackEmpty()) return M_Default;	// this is undefined behaviour. [Debug note]
 							// ^ returning M_Default is just damage control.
 	return stack[top--];	// return element at top, decrementing index
 }

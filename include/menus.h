@@ -69,7 +69,7 @@ public:
 	/* zero hover indicates first item, -1 is the state switch. */
 
 	bool change,	// flag indicating whether menu should change next cycle
-		 kill;		// flag indicating whether menu process should terminate
+		 close;		// flag indicating whether menu process should terminate
 
 	void open();
 	String getTitle(uint8_t UID);
