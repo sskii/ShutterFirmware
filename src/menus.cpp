@@ -32,7 +32,7 @@ void MenuLogic::open() {
 
 		change = false;				// reset the change flag
 
-		// TODO draw the menu from scratch
+		// TODO draw the menu from scratch now
 
 		// monitor the menu until it needs to exit
 		while(!change) {
