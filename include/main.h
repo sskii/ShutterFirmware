@@ -9,6 +9,7 @@
 #define MAIN_H_
 
 #include "menus.h"
+#include "timer.h"
 
 // set up modules
 static MenuLogic menuLogic;		// menu logic
