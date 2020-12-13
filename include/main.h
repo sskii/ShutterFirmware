@@ -13,8 +13,4 @@
 // set up modules
 static MenuLogic menuLogic;		// menu logic
 
-// forward-declare functions
-void mainLoop();
-
-
 #endif /* MAIN_H_ */
