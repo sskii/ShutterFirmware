@@ -47,9 +47,9 @@ void Timer::beginExp() {
 	// now we idle and hold contol 
 	while(!escape) {}
 
-	// shutter should now be closed
+	// this function continues execution when shutter is closed
 
-	// TODO deset loop
+	// TODO unset interrupts
 	// TODO tidy up
 
 }
