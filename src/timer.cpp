@@ -1,6 +1,6 @@
 /*
  * timer.cpp
- * 
+ *
  * Core timing funcitonality.
  *
  *  Created on: 13/12/2020
@@ -22,4 +22,6 @@ void Timer::beginExp() {
 float Timer::getDuration() {
 	uint8_t speedThirdSteps;	// the shutter speed in third steps
 	speedThirdSteps = settings.peek(M_BaseExp);	// get said speed
+	float duration = pow(2, (speedThirdSteps/3));	// raise 2 to a power.
+	return duration;
 }
