@@ -14,9 +14,6 @@
 HardwareInterface::HardwareInterface() {
 
 	savedStates = 0b00000000;	// zero states
-	nInteractions = 0;
-	for(uint8_t i = 0; i < 10; )
-
 
 }
 
@@ -38,6 +35,9 @@ bool HardwareInterface::scan() {
 bool HardwareInterface::pushInteraction(uint8_t interactionType) {
 	
 	// check for saturation
-	uint8_t bufferCount; // TODO find the expression to calc
+	// find the number of saved actions
+	uint8_t bufferCount = interactionsDepth + latestInteraction - oldestInteraction + 1;
+	if(bufferCount >= interactionsDepth) bufferCount -= interactionsDepth;
+	// TODO fix that garbage ^^ and find a better implementation
 
 }
