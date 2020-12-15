@@ -20,8 +20,8 @@ void Timer::beginExp() {
  * @returns The shutter speed duration in seconds (floating point)
  */
 float Timer::getDuration() {
-	uint8_t speedThirdSteps;	// the shutter speed in third steps
-	speedThirdSteps = settings.peek(M_BaseExp);	// get said speed
+	uint8_t speedThirdSteps = settings.peek(M_BaseExp);
+													// the shutter speed in third steps
 	float duration = pow(2, (speedThirdSteps/3));	// raise 2 to a power.
 	return duration;
 }
