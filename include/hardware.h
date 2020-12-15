@@ -39,9 +39,19 @@ public:
 	HardwareInterface();	// constructor
 
 private:
-	// TODO finish implementing a stack for interactions
-	uint8_t interactions[10];
-	void pushInteraction(uint8_t interactionType);
+	// TODO finish implementing a FIFO buffer for interactions
+	#define interactionsDepth 10	// number to track
+	uint8_t interactions[interactionsDepth],
+			newestInteraction,
+			oldestInteraction;
+
+	/* The interactions stack is a circular/revolving buffer
+	 * as it must be FIFO.
+	 * Thus we track the memory location of the newest
+	 * interaction (newestInteraction, the last one logged)
+	 * and oldest (oldestInteraction, the next to be read).
+	 */
+	bool pushInteraction(uint8_t interactionType);
 
 };
 
