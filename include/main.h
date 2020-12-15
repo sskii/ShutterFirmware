@@ -12,6 +12,8 @@
 #include "settings.h"
 #include "timer.h"
 
+#include <Arduino.h>
+
 // set up modules
 static MenuLogic menuLogic;			// menu logic
 static SettingsRegistry settings;	// settings
