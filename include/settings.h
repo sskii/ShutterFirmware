@@ -16,7 +16,7 @@
 
 #include <Arduino.h>
 #include <EEPROM.h>     // yeah, we'll be lazy
-                        // we can do it manually if we run short on memory.
+                        // we could redo it manually if we run short on memory.
 
 class SettingsRegistry {
 public:
